@@ -88,7 +88,7 @@ async function readFile(filePath) {
             Participant.rankMap.get(user.rank) +
             user.leaguePoints;
           person.tier = user.tier;
-          person.rank = user.rank;
+          person.rank = "I";
           person.LP = user.leaguePoints;
           person.orderingScore = userScore;
           let jsonData = JSON.stringify(personJSON);

@@ -12,7 +12,4 @@ cd TonyCQin.github.io
 # Git Stuff
 git add *
 git commit -m "Scheduled Updating Stats, Pog"
-curl -X POST \
-  -H "Authorization: token $GITHUB_TOKEN" \
-  -d '{"title": "'Testing!'", "base": "'main'", "head": "'main'"}' \
-  git push https://$GITHUB_TOKEN:x-oauth-basic@$GITHUB_TOKEN@TonyCQin/TonyCQin.github.io.git main
+git push https://$GITHUB_TOKEN:x-oauth-basic@github.com/TonyCQin/TonyCQin.github.io.git main
