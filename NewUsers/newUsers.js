@@ -43,7 +43,7 @@ class Participant {
   }
 }
 
-const apiKey = "?api_key=RGAPI-3a0c6c96-05a4-44c9-97e5-c5850421f33b";
+const apiKey = "?api_key=RGAPI-f269ccff-d965-484f-9c77-2b460b1ba117";
 
 async function readFileToList(filePath) {
   try {
@@ -124,7 +124,7 @@ readFileToList("playerList.txt")
             // console.log(jsonData);
     
             // writing to json file
-            fs.writeFile("../tft.json", jsonData, function (err) {
+            fs.writeFile("../../TonyCQin.github.io/tft.json", jsonData, function (err) {
               if (err) {
                 return console.log(err);
               }

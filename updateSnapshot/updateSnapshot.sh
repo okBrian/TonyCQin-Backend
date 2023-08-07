@@ -1,16 +1,20 @@
 #!/bin/bash
 
+GITHUB_TOKEN="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"
+
 # Run Node Program
 node updateSnapshot
 
-# Change Directory
+# Change Rel Directory
 cd ..
 cd ..
+cd TonyCQin.github.io
 # Git Stuff
 git add *
-git commit -m "Scheduled Updating Snapshot Points, Poggers"
-git push origin main
+git commit -m "Scheduled Updating Stats, Pog"
+curl -X POST \
+  -H "Authorization: token $GITHUB_TOKEN" \
+  -d '{"title": "'Testing!'", "base": "'main'", "head": "'main'"}' \
+  "https://api.github.com/repos/TonyCQin/TonyCQin.github.io/pull"
 
-# Git Auth
-echo "brianok924@gmail.com"
-echo "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"
+git push origin main

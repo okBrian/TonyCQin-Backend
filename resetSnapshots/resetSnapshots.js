@@ -4,11 +4,12 @@ async function readFile(filePath) {
     const data = await fs.readFile(filePath);
     let personJSON = JSON.parse(data.toString());
     const len = personJSON.length;
+    
     for (let i = 0; i < len; i++) {
       personJSON[i].snapshotPoints = 0;
     }
-    let jsonData = JSON.stringify(personJSON);
-    fs.writeFile("./tft.json", jsonData, function (err) {
+    let jsonData = JSON.stringify(personJSON); 
+    fs.writeFile("../../TonyCQin.github.io/tft.json", jsonData, function (err) {
       if (err) {
         return console.log(err);
       }
@@ -19,4 +20,4 @@ async function readFile(filePath) {
   }
 }
 
-readFile("../../tft.json");
+readFile("../../TonyCQin.github.io/tft.json");

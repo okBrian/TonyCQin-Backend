@@ -10,7 +10,7 @@ async function readFile(filePath) {
         personJSON[i].snapshotPoints += len - i;
     }
     let jsonData = JSON.stringify(personJSON);
-    fs.writeFile("../tft.json", jsonData, function (err) {
+    fs.writeFile("../../TonyCQin.github.io/tft.json", jsonData, function (err) {
         if (err) {
           return console.log(err);
         }
@@ -20,5 +20,5 @@ async function readFile(filePath) {
   }
 }
 
-readFile("../../tft.json");
+readFile("../../TonyCQin.github.io/tft.json");
 console.log("The snapshotPoints were saved!");

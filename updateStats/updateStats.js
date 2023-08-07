@@ -1,7 +1,7 @@
 const fs = require("fs").promises;
 // UPDATE EVERY HOUR
 
-const apiKey = "?api_key=RGAPI-3a0c6c96-05a4-44c9-97e5-c5850421f33b";
+const apiKey = "?api_key=RGAPI-f269ccff-d965-484f-9c77-2b460b1ba117";
 
 class Participant {
   constructor(username, tier, rank, LP, orderingScore, snapshotPoints = 0) {
@@ -46,7 +46,6 @@ class Participant {
 // function for getting stats of people
 async function getStats(username) {
   const link = `https://na1.api.riotgames.com/lol/summoner/v4/summoners/by-name/${username}${apiKey}`;
-  // console.log(link);
   // Anon Function to Fetch Data from API
   const fetchData = async (link) => {
     const response = await fetch(link);
@@ -81,11 +80,9 @@ async function readFile(filePath) {
   try {
     const data = await fs.readFile(filePath);
     let personJSON = JSON.parse(data.toString());
-    // console.log(personJSON);
     personJSON.forEach((person) => {
       getStats(person.username)
         .then((user) => {
-          //   console.log(personJSON);
           const userScore =
             Participant.tierMap.get(user.tier) +
             Participant.rankMap.get(user.rank) +
@@ -94,9 +91,8 @@ async function readFile(filePath) {
           person.rank = user.rank;
           person.LP = user.leaguePoints;
           person.orderingScore = userScore;
-          console.log(personJSON);
           let jsonData = JSON.stringify(personJSON);
-          fs.writeFile("./tft.json", jsonData, function (err) {
+          fs.writeFile("../../TonyCQin.github.io/tft.json", jsonData, function (err) {
             if (err) {
               return console.log(err);
             }
@@ -110,4 +106,4 @@ async function readFile(filePath) {
   }
 }
 
-readFile("../../tft.json");
+readFile("../../TonyCQin.github.io/tft.json");
