@@ -15,6 +15,4 @@ git commit -m "Scheduled Updating Stats, Pog"
 curl -X POST \
   -H "Authorization: token $GITHUB_TOKEN" \
   -d '{"title": "'Testing!'", "base": "'main'", "head": "'main'"}' \
-  "https://api.github.com/repos/TonyCQin/TonyCQin.github.io/pull"
-
-git push origin main
+  git push https://$GITHUB_TOKEN:x-oauth-basic@$GITHUB_TOKEN@TonyCQin/TonyCQin.github.io.git main
