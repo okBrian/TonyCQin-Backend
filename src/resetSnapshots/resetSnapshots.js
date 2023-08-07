@@ -25,12 +25,12 @@ async function resetSnapshot() {
 
     // Write to JSON File
     let jsonData = JSON.stringify(personJSON); 
-    fs.writeFile("jsonPath", jsonData, function (err) {
+    fs.writeFile(jsonPath, jsonData, function (err) {
         if (err) {
             return console.log(err);
         }
     });
-    console.log("The snapshotPoints were saved!");
+    console.log("The snapshotPoints were reset!");
 }
 
 resetSnapshot();

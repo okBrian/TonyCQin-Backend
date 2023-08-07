@@ -3,7 +3,6 @@
 const fs = require('fs').promises;
 // Helper Libraries 
 const util = require("../util");
-
 // Path to tft.json
 const jsonPath = util.path;
 
@@ -26,7 +25,7 @@ async function updateSnapshot() {
 
     // Write to JSON File
     let jsonData = JSON.stringify(personJSON);
-    fs.writeFile("../../TonyCQin.github.io/tft.json", jsonData, function (err) {
+    fs.writeFile(jsonPath, jsonData, function (err) {
         if (err) {
             return console.log(err);
         }
